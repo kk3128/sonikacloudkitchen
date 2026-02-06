@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonika's Cloud Kitchen | Indore</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, #1b5e20, #43a047);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 38px; margin-bottom: 10px; }
+    header p { font-size: 18px; opacity: 0.95; }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .usp {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform .3s;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    h2 { font-size: 28px; margin-bottom: 20px; }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .menu .item h3 { margin: 0 0 10px; }
+    .price { font-weight: 700; color: #2e7d32; }
+
+    .order-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 17px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover { opacity: .9; }
+
+    .reviews p {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #1b1b1b;
+      color: #eee;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sonika's Veg Meals in Indore</h1>
+  <p>Freshly Cooked • Home-Style • Hygienic Kitchen</p>
+</header>
+
+<section>
+  <h2>Why People Love Us ❤️</h2>
+  <div class="usp">
+    <div class="card">🥗 100% Pure Veg Kitchen</div>
+    <div class="card">🔥 Cooked After Order</div>
+    <div class="card">🧼 Hygienic Packaging</div>
+    <div class="card">💚 Light Oil, Healthy Taste</div>
+  </div>
+</section>
+
+<section>
+  <h2>Our Menu</h2>
+  <p>Perfect for Students • Office Lunch • Family Dinner</p>
+  <div class="menu">
+
+    <div class="card item">
+      <img src="image/paneer.jpg" alt="Paneer Biryani" style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <h3>Indori Special Paneer Biryani</h3>
+      <p class="price">₹199</p>
+      <button onclick="selectItem(199)">Order This</button>
+    </div>
+
+    <div class="card item">
+      <img src="image/Thali.jpg" alt="Veg Thali" style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <h3>Everyday Pure Veg Thali</h3>
+      <p class="price">₹129</p>
+      <button onclick="selectItem(129)">Order This</button>
+    </div>
+
+    <div class="card item">
+      <img src="image/indian.jpg" alt="Office Lunch Combo" style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <h3>Office Lunch Combo</h3>
+      <p class="price">₹149</p>
+      <button onclick="selectItem(149)">Order This</button>
+    </div>
+  
+    <div class="card item">
+      <img src="image/Manchurian.jpg" alt="Manchurian" style="width:100%; border-radius:12px; margin-bottom:10px;">
+      <h3>Manchurian</h3>
+      <p class="price">₹99</p>
+      <button onclick="selectItem(99)">Order This</button>
+    </div>
+  
+    <div class="card item">
+    <img src="image/Momo.jpg" alt="Momo" style="width:100%; border-radius:12px; margin-bottom:10px;">
+      <h3>Momos</h3>
+      <p class="price">₹69</p>
+      <button onclick="selectItem(69)">Order This</button>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center">Place Your Order</h2>
+  <div class="order-box">
+    <label>Name</label>
+    <input id="name" placeholder="Your name">
+
+    <label>Phone</label>
+    <input id="phone" placeholder="Mobile number">
+
+    <label>Amount (₹)</label>
+    <input id="amount" type="number" placeholder="Auto-filled from menu" readonly>
+
+    <button onclick="payNow()">Pay Securely</button>
+    <p style="text-align:center;margin-top:10px;font-size:14px">🔒 UPI • Debit Card • Net Banking</p>
+  </div>
+</section>
+
+<section class="reviews">
+  <h2>Customer Reviews ⭐</h2>
+  <p>⭐⭐⭐⭐⭐ “Homely food and very light.” – Amit, Vijay Nagar</p>
+  <p>⭐⭐⭐⭐⭐ “Clean packaging and great taste.” – Pooja, Palasia</p>
+  <p>⭐⭐⭐⭐⭐ “Best veg option for office lunch.” – Rohit, Bhawarkua</p>
+</section>
+
+<footer>
+  <p>📍 Serving All Areas of Indore</p>
+  <p>Order on WhatsApp for quick support</p>
+  <p>© 2026 | Designed By KK</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/+917999201200" target="_blank">💬 WhatsApp</a>
+
+<script>
+function selectItem(price) {
+  document.getElementById('amount').value = price;
+  window.scrollTo({ top: document.body.scrollHeight / 2, behavior: 'smooth' });
+}
+
+function payNow() {
+  const amount = document.getElementById('amount').value;
+  if (!amount || amount <= 0) {
+    alert('Please enter valid amount');
+    return;
+  }
+
+  var options = {
+    key: 'rzp_test_xxxxxxxxxx',
+    amount: amount * 100,
+    currency: 'INR',
+    name: 'Pure Veg Cloud Kitchen',
+    description: 'Food Order Payment',
+    method: { upi: true, card: true, netbanking: true },
+    handler: function (response) {
+      alert('Payment Successful! Order Confirmed.');
+    }
+  };
+
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
+
+</body>
+</html>
